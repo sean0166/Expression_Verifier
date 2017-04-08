@@ -118,11 +118,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Algebra_Scope.cpp" />
     <ClCompile Include="Binding_Controller.cpp" />
+    <ClCompile Include="Boolean_Scope.cpp" />
+    <ClCompile Include="Set_Scope.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="String_Scope.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algebra_Scope.h" />
     <ClInclude Include="Binding_Controller.h" />
+    <ClInclude Include="Boolean_Scope.h" />
+    <ClInclude Include="Set_Scope.h" />
+    <ClInclude Include="String_Scope.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

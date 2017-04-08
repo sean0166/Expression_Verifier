@@ -21,9 +21,33 @@
     <ClCompile Include="Binding_Controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Set_Scope.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Algebra_Scope.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="String_Scope.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Boolean_Scope.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Binding_Controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Set_Scope.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Algebra_Scope.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="String_Scope.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Boolean_Scope.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
