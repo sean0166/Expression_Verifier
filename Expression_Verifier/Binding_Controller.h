@@ -1,6 +1,4 @@
-#ifndef BINDING_CONTROLLER__
-#define BINDING_CONTROLLER__
-
+#pragma once
 #include <string>
 #include <iostream>
 using namespace std;
@@ -23,5 +21,3 @@ public:
 	int scopeIdentifier_;
 
 };
-
-#endif

@@ -33,6 +33,9 @@
     <ClCompile Include="Boolean_Scope.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Operator_Evaluator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Binding_Controller.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Boolean_Scope.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Operator_Evaluator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -121,6 +121,7 @@
     <ClCompile Include="Algebra_Scope.cpp" />
     <ClCompile Include="Binding_Controller.cpp" />
     <ClCompile Include="Boolean_Scope.cpp" />
+    <ClCompile Include="Operator_Evaluator.cpp" />
     <ClCompile Include="Set_Scope.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="String_Scope.cpp" />
@@ -129,6 +130,7 @@
     <ClInclude Include="Algebra_Scope.h" />
     <ClInclude Include="Binding_Controller.h" />
     <ClInclude Include="Boolean_Scope.h" />
+    <ClInclude Include="Operator_Evaluator.h" />
     <ClInclude Include="Set_Scope.h" />
     <ClInclude Include="String_Scope.h" />
   </ItemGroup>
