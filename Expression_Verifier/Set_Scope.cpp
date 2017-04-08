@@ -20,6 +20,6 @@ void Set_Scope::mult()
 {
 }
 
-void Set_Scope::comapre()
+void Set_Scope::compare()
 {
 }

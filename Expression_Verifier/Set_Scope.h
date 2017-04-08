@@ -1,3 +1,4 @@
+#include "Binding_Controller.h"
 #pragma once
 class Set_Scope
 {
@@ -6,6 +7,6 @@ public:
 	~Set_Scope();
 	void add();
 	void mult();
-	void comapre();
+	void compare();
 };
 
