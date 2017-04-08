@@ -10,5 +10,6 @@ public:
 	void mult();
 	void exp();
 	void compare();
+
 };
 
