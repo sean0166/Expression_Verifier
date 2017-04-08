@@ -1,4 +1,6 @@
-#pragma once
+#ifndef BINDING_CONTROLLER__
+#define BINDING_CONTROLLER__
+
 #include <string>
 #include <iostream>
 using namespace std;
@@ -22,3 +24,4 @@ public:
 
 };
 
+#endif
