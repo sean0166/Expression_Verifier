@@ -1,5 +1,5 @@
 #pragma once
-class Algebra_Scope
+class Algebra_Scope : public Binding_Controller
 {
 public:
 	Algebra_Scope();
@@ -9,5 +9,6 @@ public:
 	void mult();
 	void exp();
 	void compare();
+
 };
 
