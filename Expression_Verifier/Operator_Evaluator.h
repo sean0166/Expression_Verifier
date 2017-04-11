@@ -2,7 +2,7 @@
 #include <vector>
 #include "Binding_Controller.h"
 
-class Operator_Evaluator
+class Operator_Evaluator : public Binding_Controller
 {
 public:
 	Operator_Evaluator();

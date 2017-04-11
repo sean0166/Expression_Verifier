@@ -1,5 +1,6 @@
 #pragma once
-class Boolean_Scope
+#include "Binding_Controller.h"
+class Boolean_Scope : public Binding_Controller
 {
 public:
 	Boolean_Scope();

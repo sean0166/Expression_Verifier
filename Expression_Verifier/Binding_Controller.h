@@ -15,8 +15,7 @@ public:
 	void reduceExpression();
 
 	string tokenizeInstruction(string);
-
-
+protected:
 	int linenum_;
 	int scopeIdentifier_;
 
