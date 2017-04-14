@@ -24,21 +24,22 @@ bool Operator_Evaluator::run(const string& fileName)
 			 scopeType = getScopeType(instruction); 
 			 cout << scopeType;
 			 if (scopeType == "strings")
-				 scopes.push_back(new String_Scope()); 
+				 scopes.push(new String_Scope()); 
 			 else if (scopeType == "algebra")
-				 scopes.push_back(new Algebra_Scope());
+				 scopes.push(new Algebra_Scope());
 			 else if (scopeType == "boolean")
-				 scopes.push_back(new Boolean_Scope());
+				 scopes.push(new Boolean_Scope());
 			 else if (scopeType == "sets")
-				 scopes.push_back(new Set_Scope());
+				 scopes.push(new Set_Scope());
 			 else {
-				 //no point of setting null when vector will go out of scope after method
-				 delete scopes.back();
-				 scopes.pop_back();
+				 //no point of setting null when vector will go out of scope after pop
+				 delete scopes.top();
+				 scopes.pop();
 			 }
 		}
 		else
 		{
+			scopes.top()->reduceExpression(instruction);
 		}
 	}
 

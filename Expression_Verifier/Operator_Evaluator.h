@@ -1,5 +1,6 @@
 #pragma once
 #include <fstream>
+#include <stack>
 #include <vector>
 #include "Binding_Controller.h"
 #include "Algebra_Scope.h"
@@ -15,5 +16,5 @@ public:
 private:
 	string trimWhiteSpace(const string&);
 	string getScopeType(const string&);
-	vector<Binding_Controller*> scopes;
+	stack<Binding_Controller*> scopes;
 };

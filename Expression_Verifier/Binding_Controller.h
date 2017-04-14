@@ -22,9 +22,9 @@ protected:
 	string scopeIdentifier_;
 	string delims_;
 private:
-	vector<string> getTokens(const string&);	//Get tokens of subexpressions
+	vector<string> getTokens(const string&);			//Get tokens of subexpressions
 	vector<string> tokenizeInstruction(const string&);	//tokenize based off of "="
-
+	int getHighestPrec(vector<string> tokens);
 	int linenum_;
 
 };

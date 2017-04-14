@@ -33,7 +33,6 @@ bool Binding_Controller::compare(const string& left, const string& right)
 bool Binding_Controller::reduceExpression(string& myStr)
 {
 	vector<string> tokens = getTokens(myStr);
-	
 	return 0;
 }
 
@@ -80,6 +79,53 @@ vector<string> Binding_Controller::tokenizeInstruction(const string& myStr)
 		myAry.push_back(token);
 	}
 	return myAry;
+}
+
+int Binding_Controller::getHighestPrec(vector<string> tokens)
+{
+	int maxPrecValue = -1;
+	int maxPrecIndex;
+	for (int i = 0; i < tokens.size(); ++i)
+	{
+		if (tokens.at(i) == "(")
+		{
+			maxPrecValue = 4;
+			maxPrecIndex = i;
+		}
+		else if (tokens.at(i) == "^")
+		{
+			if (maxPrecValue < 3) 
+			{
+				maxPrecValue = 3;
+				maxPrecIndex = i;
+			}
+		}
+		else if (tokens.at(i) == "*")
+		{
+			if (maxPrecValue < 2) 
+			{
+				maxPrecValue = 2;
+				maxPrecIndex = i;
+			}
+		}
+		else if (tokens.at(i) == "+")
+		{
+			if (maxPrecValue < 1) 
+			{
+				maxPrecValue = 1;
+				maxPrecIndex = i;
+			}
+		}
+		else if (tokens.at(i) == "-")
+		{
+			if (maxPrecValue < 0) 
+			{
+				maxPrecValue = 0;
+				maxPrecIndex = i;
+			}
+		}
+	}
+	return maxPrecIndex;
 }
 
 string Binding_Controller::trimString(const string& delim, const string& myStr)const
