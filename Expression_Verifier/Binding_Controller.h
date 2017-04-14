@@ -1,5 +1,7 @@
 #pragma once
+#include <sstream>
 #include <string>
+#include <vector>
 #include <iostream>
 using namespace std;
 class Binding_Controller
@@ -12,7 +14,8 @@ public:
 	virtual string sub(const string&, const string&) const = 0;
 	virtual string exp(const string&, const string&) const = 0;
 	bool compare(const string&, const string&);
-	bool reduceExpression();
+	bool reduceExpression(string&);
+	vector<string> getTokens(const string& myStr);
 
 	string tokenizeInstruction(const string&);
 protected:

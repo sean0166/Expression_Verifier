@@ -13,15 +13,17 @@ Set_Scope::~Set_Scope()
 
 string Set_Scope::add(const string& left, const string& right)
 {
-	vector <int> leftSet = convertToArray(left);
-	vector <int> rightSet = convertToArray(right);
+	vector <string> leftSet = convertToArray(left);
+	vector <string> rightSet = convertToArray(right);
+	return "";
 }
 
 string Set_Scope::mult(const string& left, const string& right)
 {
+	return "";
 }
 
-vector<int> convertToArray(const string& myStr) 
+vector<string> Set_Scope::convertToArray(const string& myStr) 
 {
 	vector<string> myAry;
 
@@ -32,4 +34,5 @@ vector<int> convertToArray(const string& myStr)
 	{
 		myAry.push_back(token);
 	}
+	return myAry;
 }
