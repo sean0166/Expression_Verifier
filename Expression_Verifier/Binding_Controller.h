@@ -7,14 +7,14 @@ class Binding_Controller
 public:
 	Binding_Controller();
 	~Binding_Controller();
-	virtual void add() const = 0;
-	virtual void mult() const = 0;
-	virtual void sub() const = 0;
-	virtual void exp() const = 0;
-	virtual void compare() const = 0;
-	void reduceExpression();
+	virtual string add(const string&, const string&) const = 0;
+	virtual string mult(const string&, const string&) const = 0;
+	virtual string sub(const string&, const string&) const = 0;
+	virtual string exp(const string&, const string&) const = 0;
+	bool compare(const string&, const string&);
+	bool reduceExpression();
 
-	string tokenizeInstruction(string);
+	string tokenizeInstruction(const string&);
 protected:
 	int linenum_;
 	int scopeIdentifier_;

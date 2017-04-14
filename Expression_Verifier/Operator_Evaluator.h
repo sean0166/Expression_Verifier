@@ -2,7 +2,7 @@
 #include <vector>
 #include "Binding_Controller.h"
 
-class Operator_Evaluator : public Binding_Controller
+class Operator_Evaluator 
 {
 public:
 	Operator_Evaluator();
@@ -10,4 +10,3 @@ public:
 private:
 	vector<Binding_Controller*> scopes;
 };
-

@@ -9,14 +9,20 @@ Algebra_Scope::Algebra_Scope(){
 Algebra_Scope::~Algebra_Scope(){
 }
 
-int Algebra_Scope::add() {
-	
+string Algebra_Scope::add(const string& left, const string& right)
+{
+	return to_string(stoi(left) + stoi(right));	
 }
-void Algebra_Scope::sub() {
+string Algebra_Scope::sub(const string& left, const string& right)
+{
+	return to_string(stoi(left) - stoi(right));
 }
-void Algebra_Scope::mult(){
+string Algebra_Scope::mult(const string& left, const string& right)
+{
+	return to_string(stoi(left) * stoi(right));
 }
-void Algebra_Scope::exp() {
-}
-void Algebra_Scope::compare() {
+string Algebra_Scope::exp(const string& left, const string& right)
+{
+	return to_string(stoi(left) ^ stoi(right));
+
 }

@@ -8,9 +8,9 @@ Boolean_Scope::Boolean_Scope(){
 
 Boolean_Scope::~Boolean_Scope() {
 }
-void Boolean_Scope::add(){
+string Boolean_Scope::add(const string& left, const string& right){
+	return to_string((stoi(left) | stoi(right)));
 }
-void Boolean_Scope::mult(){
-}
-void Boolean_Scope::compare() {
+string Boolean_Scope::mult(const string& left, const string& right){
+	return to_string((stoi(left) & stoi(right)));
 }

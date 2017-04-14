@@ -1,11 +1,11 @@
 #pragma once
-class String_Scope
+#include "Binding_Controller.h"
+class String_Scope : public Binding_Controller
 {
 public:
 	String_Scope();
 	~String_Scope();
-	void add();
-	void mult();
-	void compare();
+	string add(const string&, const string&);
+	string mult(const string&, const string&);
 };
 

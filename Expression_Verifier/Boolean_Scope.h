@@ -5,8 +5,7 @@ class Boolean_Scope : public Binding_Controller
 public:
 	Boolean_Scope();
 	~Boolean_Scope();
-	void add();
-	void mult();
-	void compare();
+	string add(const string&, const string&);
+	string mult(const string&, const string&);
 };
 

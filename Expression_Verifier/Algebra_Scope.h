@@ -5,11 +5,10 @@ class Algebra_Scope : public Binding_Controller
 public:
 	Algebra_Scope();
 	~Algebra_Scope();
-	int add();
-	void sub();
-	void mult();
-	void exp();
-	void compare();
+	string add(const string&, const string&);
+	string sub(const string&, const string&);
+	string mult(const string&, const string&);
+	string exp(const string&, const string&);
 
 };
 

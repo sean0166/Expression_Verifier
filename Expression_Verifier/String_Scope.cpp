@@ -11,14 +11,17 @@ String_Scope::~String_Scope()
 {
 }
 
-void String_Scope::add()
+string String_Scope::add(const string& left, const string& right)
 {
+	return (left + right);
 }
 
-void String_Scope::mult()
+string String_Scope::mult(const string& left, const string& right)
 {
+	int iter = stoi(right);
+	string finalStr;
+	for (int i = 0; i < iter; i++)
+		finalStr += left;
+	return finalStr;
 }
 
-void String_Scope::compare()
-{
-}

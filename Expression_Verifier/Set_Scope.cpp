@@ -11,15 +11,25 @@ Set_Scope::~Set_Scope()
 {
 }
 
-void Set_Scope::add()
+string Set_Scope::add(const string& left, const string& right)
 {
-
+	vector <int> leftSet = convertToArray(left);
+	vector <int> rightSet = convertToArray(right);
 }
 
-void Set_Scope::mult()
+string Set_Scope::mult(const string& left, const string& right)
 {
 }
 
-void Set_Scope::compare()
+vector<int> convertToArray(const string& myStr) 
 {
+	vector<string> myAry;
+
+	stringstream stream(myStr);
+	string token;
+
+	while (getline(stream, token, ',')) 
+	{
+		myAry.push_back(token);
+	}
 }
