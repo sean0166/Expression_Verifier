@@ -15,7 +15,8 @@ public:
 	virtual string exp(const string&, const string&) const = 0;
 	bool compare(const string&, const string&);
 	bool reduceExpression(string&);
-	vector<string> getTokens(const string& myStr);
+	vector<string> getTokens(const string&);
+	bool isDelim(char);
 
 	string tokenizeInstruction(const string&);
 protected:

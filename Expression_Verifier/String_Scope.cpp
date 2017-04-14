@@ -11,12 +11,12 @@ String_Scope::~String_Scope()
 {
 }
 
-string String_Scope::add(const string& left, const string& right)
+string String_Scope::add(const string& left, const string& right)const
 {
 	return (left + right);
 }
 
-string String_Scope::mult(const string& left, const string& right)
+string String_Scope::mult(const string& left, const string& right)const
 {
 	int iter = stoi(right);
 	string finalStr;
