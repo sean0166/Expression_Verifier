@@ -7,6 +7,8 @@ using namespace std;
 class Binding_Controller
 {
 public:
+	Binding_Controller();
+	~Binding_Controller();
 	virtual string add(const string&, const string&) const = 0;
 	virtual string mult(const string&, const string&) const = 0;
 	virtual string sub(const string&, const string&) ;
@@ -14,15 +16,15 @@ public:
 	bool compare(const string&, const string&);
 	bool reduceExpression(string&);
 protected:
-	Binding_Controller();
-	~Binding_Controller();
+	string trimString(const string&, const string&)const;
+	bool isDelim(char c, const string&) const;
+	void incrLinenum();
 	string scopeIdentifier_;
 	string delims_;
-	string trimString(const string&, const string&)const;
 private:
 	vector<string> getTokens(const string&);	//Get tokens of subexpressions
 	vector<string> tokenizeInstruction(const string&);	//tokenize based off of "="
-	bool isDelim(char,const string&)const;
+
 	int linenum_;
 
 };

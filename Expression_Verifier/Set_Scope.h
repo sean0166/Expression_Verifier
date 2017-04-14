@@ -10,5 +10,6 @@ public:
 	~Set_Scope();
 	string add(const string&, const string&)const;
 	string mult(const string&, const string&)const;
+private:
 	set<int> convertToSet(const string&)const;
 };

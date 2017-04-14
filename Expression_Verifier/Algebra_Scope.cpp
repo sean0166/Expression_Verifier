@@ -4,7 +4,7 @@
 
 Algebra_Scope::Algebra_Scope()
 {
-	scopeIdentifier_ = "Algebra";
+	scopeIdentifier_ = "algebra";
 }
 
 

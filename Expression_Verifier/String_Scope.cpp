@@ -4,7 +4,7 @@
 
 String_Scope::String_Scope()
 {
-	scopeIdentifier_ = "String";
+	scopeIdentifier_ = "strings";
 }
 
 

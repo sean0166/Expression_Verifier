@@ -4,7 +4,7 @@
 
 Boolean_Scope::Boolean_Scope()
 {
-	scopeIdentifier_ = "Boolean";
+	scopeIdentifier_ = "boolean";
 }
 
 

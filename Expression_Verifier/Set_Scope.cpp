@@ -4,7 +4,7 @@
 
 Set_Scope::Set_Scope()
 {
-	scopeIdentifier_ = "Set";
+	scopeIdentifier_ = "sets";
 }
 
 
