@@ -2,7 +2,9 @@
 
 
 
-Boolean_Scope::Boolean_Scope(){
+Boolean_Scope::Boolean_Scope()
+{
+	scopeIdentifier_ = "Boolean";
 }
 
 

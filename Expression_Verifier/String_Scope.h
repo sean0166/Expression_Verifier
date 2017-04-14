@@ -7,5 +7,6 @@ public:
 	~String_Scope();
 	string add(const string&, const string&)const;
 	string mult(const string&, const string&)const;
+
 };
 

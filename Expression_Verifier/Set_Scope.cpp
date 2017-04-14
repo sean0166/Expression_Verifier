@@ -4,6 +4,7 @@
 
 Set_Scope::Set_Scope()
 {
+	scopeIdentifier_ = "Set";
 }
 
 
@@ -63,7 +64,7 @@ string Set_Scope::mult(const string& left, const string& right)const
 				finalSet += ",";
 			}
 	if(finalSet != "{")
-		finalSet.erase(finalSet.size() - 1);
+		finalSet.erase(finalSet.size() - 1); 
 	finalSet += "}";
 
 	return finalSet;
