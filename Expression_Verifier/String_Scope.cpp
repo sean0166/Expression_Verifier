@@ -13,7 +13,7 @@ String_Scope::~String_Scope()
 
 string String_Scope::add(const string& left, const string& right)const
 {
-	return (left + right);
+	return left + right;
 }
 
 string String_Scope::mult(const string& left, const string& right)const
