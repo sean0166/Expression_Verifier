@@ -22,6 +22,26 @@ string Binding_Controller::exp(const string &, const string &)
 	return string();
 }
 
+bool Binding_Controller::verifyInstruction(const string & instruction)
+{
+	vector<string>* tokens = new vector<string>();
+	vector<string> reducedExpressions;
+	vector<string>::iterator it;
+
+	*tokens = tokenizeInstruction(instruction);
+
+	for (it = tokens->begin(); it != tokens->end(); ++it)
+		reducedExpressions.push_back(reduceExpression(*it));
+
+	for (int i = 0; i < reducedExpressions.size() - 1; ++i)
+	{
+		if (reducedExpressions.at(i) != reducedExpressions.at(i + 1))
+			return false;
+	}
+	return true;
+	
+}
+
 bool Binding_Controller::compare(const string& left, const string& right)
 {
 	if (!left.compare(right))
@@ -30,7 +50,8 @@ bool Binding_Controller::compare(const string& left, const string& right)
 		return false;
 }
 
-string Binding_Controller::reduceExpression(string& myStr)
+
+string Binding_Controller::reduceExpression(const string& myStr)
 {
 	vector<string> tokens = getTokens(myStr);
 	int highestPrecIndex;
@@ -55,7 +76,7 @@ string Binding_Controller::reduceExpression(string& myStr)
 			subExpr = exp(tokens.at(highestPrecIndex - 1), tokens.at(highestPrecIndex+1));
 			tokens.at(highestPrecIndex - 1) = subExpr;
 			tokens.erase(tokens.begin() + highestPrecIndex);
-			tokens.erase(tokens.begin() + highestPrecIndex + 1 );
+			tokens.erase(tokens.begin() + highestPrecIndex );
 		}
 		else  if (tokens.at(highestPrecIndex) == "*")
 		{
@@ -196,4 +217,14 @@ string Binding_Controller::trimString(const string& delim, const string& myStr)c
 void Binding_Controller::incrLinenum()
 {
 	linenum_++;
+}
+
+int Binding_Controller::getLinenum()
+{
+	return linenum_;
+}
+
+string Binding_Controller::getScopeIdentifier()
+{
+	return scopeIdentifier_;
 }

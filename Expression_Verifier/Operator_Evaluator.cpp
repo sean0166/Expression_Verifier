@@ -23,22 +23,27 @@ bool Operator_Evaluator::run(const string& fileName)
 		{
 			 scopeType = getScopeType(instruction); 
 			 if (scopeType == "strings")
-				 scopes.push(new String_Scope()); 
+				 scopes_.push(new String_Scope()); 
 			 else if (scopeType == "algebra")
-				 scopes.push(new Algebra_Scope());
+				 scopes_.push(new Algebra_Scope());
 			 else if (scopeType == "boolean")
-				 scopes.push(new Boolean_Scope());
+				 scopes_.push(new Boolean_Scope());
 			 else if (scopeType == "sets")
-				 scopes.push(new Set_Scope());
+				 scopes_.push(new Set_Scope());
 			 else {
 				 //no point of setting null when vector will go out of scope after pop
-				 delete scopes.top();
-				 scopes.pop();
+				 delete scopes_.top();
+				 scopes_.pop();
 			 }
 		}
 		else
 		{
-			scopes.top()->reduceExpression(instruction);
+			if (instruction != "") 
+			{
+				scopes_.top()->incrLinenum();
+				if (!scopes_.top()->verifyInstruction(instruction))
+					cout << "Instruction #" << scopes_.top()->getLinenum() << " in the " << scopes_.top()->getScopeIdentifier() << " scope is invalid!:" << endl << instruction  << endl;
+			}
 		}
 	}
 

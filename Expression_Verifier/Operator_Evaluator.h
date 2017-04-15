@@ -16,5 +16,5 @@ public:
 private:
 	string trimWhiteSpace(const string&);
 	string getScopeType(const string&);
-	stack<Binding_Controller*> scopes;
+	stack<Binding_Controller*> scopes_;
 };
