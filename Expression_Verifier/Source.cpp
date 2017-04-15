@@ -1,15 +1,15 @@
 #include <string>
 #include <iostream>
 #include "Operator_Evaluator.h"
-#include "Algebra_Scope.h"
 using namespace std;
 int main(int argc, char** argv) 
 {
-	string s1 = " {  1,2,5,1} 1 ";
-	string s2 = "{1,2,3,7,5,3,100}";
+	string fileName;
+	cout << "Enter the name of your file:" << endl;
+	cin >> fileName; 
 
 	Operator_Evaluator* oe = new Operator_Evaluator();
-	oe->run("testFile.txt");
+	oe->run(fileName);
 
 
 	system("pause");
