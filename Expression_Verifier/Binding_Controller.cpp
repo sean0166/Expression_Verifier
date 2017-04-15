@@ -30,10 +30,59 @@ bool Binding_Controller::compare(const string& left, const string& right)
 		return false;
 }
 
-bool Binding_Controller::reduceExpression(string& myStr)
+string Binding_Controller::reduceExpression(string& myStr)
 {
 	vector<string> tokens = getTokens(myStr);
-	return 0;
+	int highestPrecIndex;
+	while (tokens.size() > 1) {
+		highestPrecIndex = getHighestPrec(tokens);
+		if (tokens.at(highestPrecIndex) == "(")
+		{
+			string subExpr;
+			int i = highestPrecIndex + 1;
+			while (tokens.at(i) != ")") 
+			{
+				subExpr += tokens.at(i);
+				tokens.erase(tokens.begin() + i);
+			}
+			subExpr = reduceExpression(subExpr);
+			tokens.at(highestPrecIndex) = subExpr;
+			tokens.erase(tokens.begin() + i);
+		}
+		else  if (tokens.at(highestPrecIndex) == "^")
+		{	
+			string subExpr;
+			subExpr = exp(tokens.at(highestPrecIndex - 1), tokens.at(highestPrecIndex+1));
+			tokens.at(highestPrecIndex - 1) = subExpr;
+			tokens.erase(tokens.begin() + highestPrecIndex);
+			tokens.erase(tokens.begin() + highestPrecIndex + 1 );
+		}
+		else  if (tokens.at(highestPrecIndex) == "*")
+		{
+			string subExpr;
+			subExpr = mult(tokens.at(highestPrecIndex - 1), tokens.at(highestPrecIndex + 1));
+			tokens.at(highestPrecIndex - 1) = subExpr;
+			tokens.erase(tokens.begin() + highestPrecIndex);
+			tokens.erase(tokens.begin() + highestPrecIndex);
+		}
+		else  if (tokens.at(highestPrecIndex) == "+")
+		{
+			string subExpr;
+			subExpr = add(tokens.at(highestPrecIndex - 1), tokens.at(highestPrecIndex + 1));
+			tokens.at(highestPrecIndex - 1) = subExpr;
+			tokens.erase(tokens.begin() + highestPrecIndex);
+			tokens.erase(tokens.begin() + highestPrecIndex);
+		}
+		else  if (tokens.at(highestPrecIndex) == "-")
+		{
+			string subExpr;
+			subExpr = sub(tokens.at(highestPrecIndex - 1), tokens.at(highestPrecIndex + 1));
+			tokens.at(highestPrecIndex - 1) = subExpr;
+			tokens.erase(tokens.begin() + highestPrecIndex);
+			tokens.erase(tokens.begin() + highestPrecIndex);
+		}
+	}
+	return tokens.at(0);
 }
 
 vector<string> Binding_Controller::getTokens(const string& myStr)
@@ -51,6 +100,7 @@ vector<string> Binding_Controller::getTokens(const string& myStr)
 			if (!temp.empty())
 				tokens.push_back(temp);
 			temp.clear();
+			tokens.push_back(string(1,curChar));
 		}
 		curChar = stream.get();
 	}
@@ -84,7 +134,7 @@ vector<string> Binding_Controller::tokenizeInstruction(const string& myStr)
 int Binding_Controller::getHighestPrec(vector<string> tokens)
 {
 	int maxPrecValue = -1;
-	int maxPrecIndex;
+	int maxPrecIndex = -1;
 	for (int i = 0; i < tokens.size(); ++i)
 	{
 		if (tokens.at(i) == "(")

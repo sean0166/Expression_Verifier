@@ -22,7 +22,6 @@ bool Operator_Evaluator::run(const string& fileName)
 		if (instruction[0] == '<')
 		{
 			 scopeType = getScopeType(instruction); 
-			 cout << scopeType;
 			 if (scopeType == "strings")
 				 scopes.push(new String_Scope()); 
 			 else if (scopeType == "algebra")
