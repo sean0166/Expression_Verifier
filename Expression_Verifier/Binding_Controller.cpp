@@ -33,6 +33,9 @@ bool Binding_Controller::verifyInstruction(const string & instruction)
 	for (it = tokens->begin(); it != tokens->end(); ++it)
 		reducedExpressions.push_back(reduceExpression(*it));
 
+	delete tokens;
+	tokens = NULL;
+
 	for (int i = 0; i < reducedExpressions.size() - 1; ++i)
 	{
 		if (reducedExpressions.at(i) != reducedExpressions.at(i + 1))
