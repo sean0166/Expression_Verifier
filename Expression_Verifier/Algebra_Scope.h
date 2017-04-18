@@ -6,9 +6,9 @@ public:
 	Algebra_Scope();
 	~Algebra_Scope();
 	string add(const string&, const string&)const;
-	string sub(const string&, const string&)const;
+	string sub(const string&, const string&);
 	string mult(const string&, const string&)const;
-	string exp(const string&, const string&)const;
+	string exp(const string&, const string&);
 
 };
 
