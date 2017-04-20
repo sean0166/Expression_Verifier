@@ -16,13 +16,13 @@ bool Operator_Evaluator::run(const string& fileName)
 {
 	ifstream myFile(fileName);
 	string instruction, scopeType;
-	while (getline(myFile, instruction)) 
+	while (getline(myFile, instruction))              ///loop through myFile setting instruction equal to each line
 	{
 		instruction = trimWhiteSpace(instruction);
 		if (instruction[0] == '<')
 		{
 			 scopeType = getScopeType(instruction); 
-			 if (scopeType == "strings")
+			 if (scopeType == "strings")            
 				 scopes_.push(new String_Scope()); 
 			 else if (scopeType == "algebra")
 				 scopes_.push(new Algebra_Scope());

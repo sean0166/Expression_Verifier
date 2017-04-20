@@ -30,8 +30,8 @@ bool Binding_Controller::verifyInstruction(const string & instruction)
 
 	*tokens = tokenizeInstruction(instruction);
 
-	for (it = tokens->begin(); it != tokens->end(); ++it)
-		reducedExpressions.push_back(reduceExpression(*it));
+	for (it = tokens->begin(); it != tokens->end(); ++it)     
+		reducedExpressions.push_back(reduceExpression(*it));  
 
 	delete tokens;
 	tokens = NULL;
@@ -59,19 +59,19 @@ string Binding_Controller::reduceExpression(const string& myStr)
 	vector<string> tokens = getTokens(myStr);
 	int highestPrecIndex;
 	while (tokens.size() > 1) {
-		highestPrecIndex = getHighestPrec(tokens);
+		highestPrecIndex = getHighestPrec(tokens);  ///Get index of next highest precedence
 		if (tokens.at(highestPrecIndex) == "(")
 		{
 			string subExpr;
 			int i = highestPrecIndex + 1;
-			while (tokens.at(i) != ")") 
+			while (tokens.at(i) != ")")             /// For everything in the parenthesis
 			{
-				subExpr += tokens.at(i);
-				tokens.erase(tokens.begin() + i);
+				subExpr += tokens.at(i);            ///   add tokens to sub expression
+				tokens.erase(tokens.begin() + i);   ///   while removing from expression
 			}
-			subExpr = reduceExpression(subExpr);
+			subExpr = reduceExpression(subExpr);    /// Recursively reduce the subExpr
 			tokens.at(highestPrecIndex) = subExpr;
-			tokens.erase(tokens.begin() + i);
+			tokens.erase(tokens.begin() + i); 
 		}
 		else  if (tokens.at(highestPrecIndex) == "^")
 		{	
@@ -108,7 +108,7 @@ string Binding_Controller::reduceExpression(const string& myStr)
 	}
 	return tokens.at(0);
 }
-
+//Returns vector of tokens delimited by the delims_ string ie. the non-operators
 vector<string> Binding_Controller::getTokens(const string& myStr)
 {
 	vector<string> tokens;
@@ -133,6 +133,7 @@ vector<string> Binding_Controller::getTokens(const string& myStr)
 	return tokens; 
 	
 }
+//Determines if the supplied string is contained in "delims" string
 bool Binding_Controller::isDelim(char c, const string& delims) const
 {
 	for (int i = 0; i < delims.size(); i++)
@@ -140,7 +141,7 @@ bool Binding_Controller::isDelim(char c, const string& delims) const
 			return true;
 	return false;
 }
-
+//Returns a vector containing expressions delimited by '='
 vector<string> Binding_Controller::tokenizeInstruction(const string& myStr)
 {
 	vector<string> myAry;
@@ -154,7 +155,7 @@ vector<string> Binding_Controller::tokenizeInstruction(const string& myStr)
 	}
 	return myAry;
 }
-
+//Loop through tokens and return the index of the highest precedence
 int Binding_Controller::getHighestPrec(vector<string> tokens)
 {
 	int maxPrecValue = -1;
