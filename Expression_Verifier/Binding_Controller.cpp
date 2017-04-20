@@ -70,8 +70,8 @@ string Binding_Controller::reduceExpression(const string& myStr)
 				tokens.erase(tokens.begin() + i);   ///   while removing from expression
 			}
 			subExpr = reduceExpression(subExpr);    /// Recursively reduce the subExpr
-			tokens.at(highestPrecIndex) = subExpr;
-			tokens.erase(tokens.begin() + i); 
+			tokens.at(highestPrecIndex) = subExpr;  /// replace open parent with expression
+			tokens.erase(tokens.begin() + i);       
 		}
 		else  if (tokens.at(highestPrecIndex) == "^")
 		{	

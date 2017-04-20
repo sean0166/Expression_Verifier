@@ -9,10 +9,10 @@ class Binding_Controller
 public:
 	Binding_Controller();
 	~Binding_Controller();
-	virtual string add(const string&, const string&) const = 0;
-	virtual string mult(const string&, const string&) const = 0;
-	virtual string sub(const string&, const string&) ;
-	virtual string exp(const string&, const string&) ;
+	virtual string add(const string&, const string&) const = 0; //   Pure virtual methods have to be
+	virtual string mult(const string&, const string&) const = 0;// implemented in the child class(es).
+	virtual string sub(const string&, const string&) ;			 
+	virtual string exp(const string&, const string&) ;			 
 	bool verifyInstruction(const string&);
 	bool compare(const string&, const string&);
 	void incrLinenum();

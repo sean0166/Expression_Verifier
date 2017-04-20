@@ -56,7 +56,7 @@ string Operator_Evaluator::trimWhiteSpace(const string& myStr)
 	char curChar = stream.get();
 	while (curChar != EOF)
 	{
-		if (curChar != ' ')
+		if (curChar != ' ' && curChar != '\t')
 			retString += curChar;
 		curChar = stream.get();
 	}
